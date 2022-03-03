@@ -1,0 +1,54 @@
+.lang_switcher {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  span {
+    padding: 0.6rem 0.7rem;
+    position: relative;
+    z-index: 10;
+    text-transform: capitalize;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  ul.hidden_switcher {
+    position: absolute;
+    list-style-type: none;
+    top: 0;
+    text-align: center;
+    width: 46px;
+    overflow: hidden;
+    height: 0;
+    z-index: 5;
+    opacity: 0;
+    padding: 0;
+    transition: all 0.2s ease-in-out;
+
+    @include transition;
+
+    li {
+      margin-top: 38px;
+
+      &:last-child {
+        margin-top: 5px;
+      }
+
+      a {
+        color: #fff;
+        text-transform: capitalize;
+        font-size: 1rem;
+        padding: 0;
+      }
+
+      &.current-lang {
+        display: none;
+      }
+    }
+
+    &.active {
+      height: 100px;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+body {
+  -webkit-tap-highlight-color: $primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  min-width: 320px;
+  scroll-padding-top: 0; // usually the height of the navbar
+}
+
+// Remove tap highlight on iOS
+input,
+textarea,
+button,
+select,
+label,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  @include transition();
+}
+
+// Utility classes
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.flex-1-1-100 {
+  flex: 1 1 100%;
+}
+
+// Highlight Color Customization
+::selection {
+  color: white;
+  text-shadow: none;
+  background: $primary;
+}
+
+// Style focus outlines
+a:focus,
+button:focus,
+*:focus {
+  outline: 1px dotted $primary !important;
+  outline-offset: 4px;
+}
+
+// turn off focus outlines if the .accessibility class is not present on <body>
+body:not(.accessibility) a:focus,
+body:not(.accessibility) button:focus,
+body:not(.accessibility) *:focus {
+  outline: none !important;
+}
+
+h2,
+h3,
+h4 {
+  font-family: 'TTNorms', sans-serif;
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3.625rem;
+
+  span {
+    font-family: 'Oswald', sans-serif;
+    color: $warning;
+  }
+}
+
+p,
+div,
+span,
+ul,
+li,
+a {
+  font-family: 'TTNorms', sans-serif;
+
+  span {
+    color: $warning;
+  }
+}
+
+.container {
+  max-width: 1440px;
+}
+
+.container-max {
+  max-width: 1920px;
+}
+
+.swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  background: #C4C4C4;
+  margin: 0 8px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #252525;
+}
+
+.section_title {
+  h2 {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 133.02%;
+  }
+
+  &__sub {
+    font-size: 18px;
+    line-height: 159.52%;
+  }
+}

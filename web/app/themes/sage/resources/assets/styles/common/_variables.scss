@@ -1,0 +1,69 @@
+/** Import Bootstrap functions */
+@import '~bootstrap/scss/functions';
+
+$primary: #364d50;
+$secondary: #ede9d6;
+$warning: #c80000;
+$light: #fbde6d;
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;
+
+// Options
+$enable-rounded: false;
+$enable-print-styles: false;
+
+// Links
+$link-color: inherit;
+$link-hover-decoration: none;
+$link-hover-color: inherit;
+
+// Components
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+$border-width: 2px;
+
+// Buttons + Forms
+$input-btn-focus-width: 0;
+
+// Close
+$close-color: $primary;
+$close-text-shadow: none;
+
+$screen-xs: 0;
+$screen-sm: 479px;
+$screen-md: 767px;
+$screen-lg: 991px;
+$screen-xl: 1199px;
+
+@mixin _xs {
+  @media (max-width: $screen-xs) {
+    @content;
+  }
+}
+
+@mixin _sm {
+  @media (max-width: $screen-sm) {
+    @content;
+  }
+}
+
+@mixin _md {
+  @media (max-width: $screen-md) {
+    @content;
+  }
+}
+
+@mixin _lg {
+  @media (max-width: $screen-lg) {
+    @content;
+  }
+}
+
+@mixin _xl {
+  @media (max-width: $screen-xl) {
+    @content;
+  }
+}

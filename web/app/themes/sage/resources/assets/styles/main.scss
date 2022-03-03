@@ -1,0 +1,62 @@
+/**
+ * Import Fonts here
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+@font-face {
+  font-family: 'TTNorms';
+  src: url('../fonts/TTNorms-Medium.otf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'TTNorms';
+  src: url('../fonts/TTNorms-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+@import 'common/variables';
+
+/**
+Instead of importing everything in the autoload directory, we"re going to
+import a subset of Bootstrap"s SCSS, in an attempt to keep the final
+CSS file from getting too bloated with unused styles
+ */
+
+//@import "~bootstrap/scss/bootstrap"; // all of Bootstrap
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/images';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/transitions';
+@import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/close';
+@import '~bootstrap/scss/modal';
+@import '~bootstrap/scss/spinners';
+@import '~bootstrap/scss/utilities';
+
+/** Swiper */
+@import 'utils/swiper-bundle.min.css';
+
+/** Import sass-svg-uri **/
+@import '~sass-svg-uri/_svg-uri';
+
+/** Import theme styles */
+@import 'common/global';
+@import 'components/loading';
+@import 'components/buttons';
+@import 'components/modals';
+@import 'components/lang_swicher';
+@import 'layouts/header';
+@import 'layouts/sidebar';
+@import 'layouts/footer';
+@import 'layouts/pages';
+@import 'layouts/posts';
+@import 'layouts/tinymce';
+@import 'partials/wysiwyg-content';
+@import 'pages/home';

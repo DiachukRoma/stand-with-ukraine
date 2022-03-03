@@ -1,0 +1,142 @@
+header {
+  max-width: 1920px;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  z-index: 100;
+
+  .mob_menu_btn {
+    display: none;
+    position: relative;
+    border: none;
+    background-color: transparent;
+    width: 46px;
+    height: 38px;
+
+    @include _md {
+      display: block;
+    }
+
+    .line {
+      height: 2px;
+      width: 30px;
+      background-color: rgb(0, 0, 0);
+      position: absolute;
+      left: 6px;
+
+      &:nth-child(1) {
+        top: 8px;
+      }
+
+      &:nth-child(2) {
+        top: 16px;
+      }
+
+      &:nth-child(3) {
+        top: 24px;
+      }
+    }
+
+    &.active .line {
+      left: 1.2rem;
+
+      &:nth-child(1) {
+        width: 1.5rem;
+        top: 1.2rem;
+        transform: rotateZ(45deg);
+      }
+
+      &:nth-child(2) {
+        display: none;
+      }
+
+      &:nth-child(3) {
+        width: 1.5rem;
+        top: 1.2rem;
+        transform: rotateZ(-45deg);
+      }
+    }
+  }
+
+  ul {
+    li {
+      a {
+        padding: 1em 1.2em;
+        font-weight: 700;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .text-end {
+    display: flex;
+
+    a {
+      font-weight: bold;
+      font-size: 17px;
+      color: #fff;
+    }
+
+    .btn {
+      margin-inline-end: 2rem;
+    }
+  }
+
+  @include _md {
+    #main-menu,
+    .text-end {
+      display: none;
+    }
+
+    .lang_switcher ul.hidden_switcher {
+      &.active {
+        height: 126px;
+      }
+
+      li {
+        margin-top: 50px;
+      }
+    }
+
+    &.active {
+      .mob_menu_btn .line {
+        background-color: #fff;
+      }
+
+      ul {
+        margin-left: 0 !important;
+
+        li {
+          margin-bottom: 1rem;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.96);
+      }
+
+      #main-menu,
+      .text-end {
+        display: block;
+        position: fixed;
+        top: 5rem;
+        color: #fff;
+      }
+
+      .text-end {
+        top: 14rem;
+        display: flex;
+      }
+    }
+  }
+}
