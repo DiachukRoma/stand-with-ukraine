@@ -79,54 +79,17 @@
 												</div>
 
 												<div class="swiper-wrapper">
-														<div class="swiper-slide news__single">
-																<div class="photo" data-toggle="modal" data-target="#video_1"><img src="@asset('images/news.jpg')" alt="title"></div>
-																<div class="data d-flex justify-content-between">
-																		<p class="location">Austria, Vienna</p>
-																		<p class="protestors">10,000 protestors</p>
-																</div>
-																<div class="description">Protesters around the world rally in support of Ukraine</div>
-														</div>
-														<div class="swiper-slide news__single">
-																<div class="photo"><img src="@asset('images/tank.jpg')" alt="title"></div>
-																<div class="data d-flex justify-content-between">
-																		<p class="location">Austria, Vienna</p>
-																		<p class="protestors">10,000 protestors</p>
-																</div>
-																<div class="description">A demonstrator holds a European Union flag during a protest against Russia's military invasion of Ukraine, in front of the Russian Consulate in Barcelona.</div>
-														</div>
-														<div class="swiper-slide news__single">
-																<div class="photo"><img src="@asset('images/news.jpg')" alt="title"></div>
-																<div class="data d-flex justify-content-between">
-																		<p class="location">Austria, Vienna</p>
-																		<p class="protestors">10,000 protestors</p>
-																</div>
-																<div class="description">People waved yellow-blue Ukrainian flags and chanted pro-Ukraine slogans at the rallies on Thursday.</div>
-														</div>
-														<div class="swiper-slide news__single">
-																<div class="photo"><img src="@asset('images/news.jpg')" alt="title"></div>
-																<div class="data d-flex justify-content-between">
-																		<p class="location">Austria, Vienna</p>
-																		<p class="protestors">10,000 protestors</p>
-																</div>
-																<div class="description">Protesters around the world rally in support of Ukraine</div>
-														</div>
-														<div class="swiper-slide news__single">
-																<div class="photo"><img src="@asset('images/news.jpg')" alt="title"></div>
-																<div class="data d-flex justify-content-between">
-																		<p class="location">Austria, Vienna</p>
-																		<p class="protestors">10,000 protestors</p>
-																</div>
-																<div class="description">Protesters around the world rally in support of Ukraine</div>
-														</div>
-														<div class="swiper-slide news__single">
-																<div class="photo"><img src="@asset('images/news.jpg')" alt="title"></div>
-																<div class="data d-flex justify-content-between">
-																		<p class="location">Austria, Vienna</p>
-																		<p class="protestors">10,000 protestors</p>
-																</div>
-																<div class="description">Protesters around the world rally in support of Ukraine</div>
-														</div>
+														@php $counter = 0; @endphp
+														@foreach ($news_fields as $item)
+															<div class="swiper-slide news__single">
+																	<div class="photo" data-toggle="modal" data-target="#news_{{ $counter++ }}">{!! $item->photo !!}</div>
+																	<div class="data d-flex justify-content-between">
+																			<p class="location">{{ $item->location }}</p>
+																			<p class="protestors">{{ $item->count_people }}</p>
+																	</div>
+																	<div class="description">{{ $item->title }}</div>
+															</div>
+														@endforeach
 												</div>
 
 												<div class="news-pagination"></div>
@@ -134,17 +97,18 @@
 								</div>
 						</div>
 				</div>
-        <div class="modal fade" id="video_1" tabindex="-1" aria-labelledby="video_1" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-              <div class="modal-body">
-                <video class="w-100" controls>
-                  <source src="@asset('images/main.mp4')" type="video/mp4">
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
+				@php $counter = 0; @endphp
+				@foreach ($news_fields as $item)
+					<div class="modal fade" id="news_{{ $counter }}" tabindex="-1" aria-labelledby="news_{{ $counter++ }}" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered modal-xl">
+							<div class="modal-content">
+								<div class="modal-body">
+									{!! $item->content !!}
+								</div>
+							</div>
+						</div>
+					</div>
+				@endforeach
 		</section>
 
 		<section class="whatHas my-5 py-5">

@@ -25,6 +25,27 @@ class TemplateHome extends Controller
   }
 
   /**
+   * Get news
+   */
+  public function newsFields()
+  {
+    return collect(
+      get_posts([
+          'post_type' => 'post',
+          'numberposts' => -1,
+      ])
+    )->map(function ($post) {
+        return (object) [
+            'title' => $post->post_title,
+            'photo' => get_the_post_thumbnail($post, array(400, 400)),
+            'content' => $post->post_content,
+            'location' => get_field('position', $post),
+            'count_people' => get_field('count_people', $post),
+        ];
+    });
+  }
+
+  /**
    * Get standing
    */
   public function standingFields(){
