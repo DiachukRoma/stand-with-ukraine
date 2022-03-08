@@ -90,7 +90,23 @@ class App extends Controller
             'primary' => [
                 'theme_location' => 'primary_navigation',
                 'container' => false,
-                'menu_class' => 'nav col-12 col-lg-auto mr-lg-auto ml-5 mb-2 justify-content-center mb-md-0',
+                'menu_class' => 'nav col-6 justify-content-center',
+                'menu_id' => 'main-menu',
+            ],
+        );
+    }
+    
+    /**
+     * $nav_arguments footer
+     * @return object
+     */
+    public function navArgumentsFooter(): object
+    {
+        return (object)array(
+            'primary' => [
+                'theme_location' => 'primary_navigation',
+                'container' => false,
+                'menu_class' => 'nav justify-content-center',
                 'menu_id' => 'main-menu',
             ],
         );

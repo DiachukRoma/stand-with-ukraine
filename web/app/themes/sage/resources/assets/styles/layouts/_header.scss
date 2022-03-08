@@ -1,10 +1,19 @@
 header {
-  max-width: 1920px;
-  margin: auto;
   padding-left: 15px;
   padding-right: 15px;
-  position: relative;
+  position: fixed;
   z-index: 100;
+  width: 100%;
+  background-color: #fff;
+
+  .header__container {
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1920px;
+    margin: auto;
+  }
 
   .mob_menu_btn {
     display: none;
@@ -78,7 +87,7 @@ header {
     a {
       font-weight: bold;
       font-size: 17px;
-      color: #fff;
+      color: #000;
     }
 
     .btn {
@@ -104,7 +113,7 @@ header {
 
     &.active {
       .mob_menu_btn .line {
-        background-color: #fff;
+        background-color: #000;
       }
 
       ul {

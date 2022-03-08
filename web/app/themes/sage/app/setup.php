@@ -165,3 +165,128 @@ function registerWhoops()
 if ((WP_DEBUG) && !(is_admin())) {
     registerWhoops();
 }
+
+/**
+ * Movements taxonomy and post type
+ */
+add_action('init', function () {
+    register_post_type('movements', [
+        'labels' => [
+            'name' => __('Movements', 'sage'),
+            'singular_name' => __('Movement', 'sage'),
+            'add_new' => __('Add movement', 'sage'),
+            'add_new_item' => __('Add new movement', 'sage'),
+            'edit_item' => __('Edit movement', 'sage'),
+            'new_item' => __('New movement', 'sage'),
+            'view_item' => __('Show movements', 'sage'),
+            'search_items' => __('Find movement', 'sage'),
+            'not_found' => __('Not found', 'sage'),
+            'not_found_in_trash' => __('Not found in thash', 'sage'),
+            'menu_name' => __('Movements', 'sage'),
+        ],
+        'public' => true,
+        'show_in_menu' => true,
+        'menu_position' => 6,
+        'menu_icon' => 'dashicons-groups',
+        'taxonomies' => array('post_tag'),
+        'supports' => ['title', 'thumbnail'],
+        'rewrite' => array('slug' => 'movements'),
+        'query_var' => true,
+    ]);
+});
+
+/**
+ * Sanctions taxonomy and post type
+ */
+add_action('init', function () {
+    register_taxonomy('sanctions_taxonomy', 'sanctions', [
+        'label' => 'Sanctions category',
+        'hierarchical' => true,
+        'query_var' => true,
+    ]);
+    register_post_type('sanctions', [
+        'labels' => [
+            'name' => __('Sanctions', 'sage'),
+            'singular_name' => __('Sanction', 'sage'),
+            'add_new' => __('Add sanction', 'sage'),
+            'add_new_item' => __('Add new sanction', 'sage'),
+            'edit_item' => __('Edit sanction', 'sage'),
+            'new_item' => __('New sanction', 'sage'),
+            'view_item' => __('Show sanctions', 'sage'),
+            'search_items' => __('Find sanction', 'sage'),
+            'not_found' => __('Not found', 'sage'),
+            'not_found_in_trash' => __('Not found in thash', 'sage'),
+            'menu_name' => __('Sanctions', 'sage'),
+        ],
+        'public' => true,
+        'show_in_menu' => true,
+        'menu_position' => 6,
+        'menu_icon' => 'dashicons-admin-site',
+        'taxonomies' => array('sanctions_taxonomy'),
+        'supports' => ['title', 'thumbnail', 'excerpt'],
+        'rewrite' => array('slug' => 'sanctions'),
+        'query_var' => true,
+    ]);
+});
+
+/**
+ * Petitions taxonomy and post type
+ */
+add_action('init', function () {
+    register_taxonomy('petitions_taxonomy', 'petitions', [
+        'label' => 'Petitions category',
+        'hierarchical' => true,
+        'query_var' => true,
+    ]);
+    register_post_type('petitions', [
+        'labels' => [
+            'name' => __('Petitions', 'sage'),
+            'singular_name' => __('Petition', 'sage'),
+            'add_new' => __('Add petition', 'sage'),
+            'add_new_item' => __('Add new petition', 'sage'),
+            'edit_item' => __('Edit petition', 'sage'),
+            'new_item' => __('New petition', 'sage'),
+            'view_item' => __('Show petitions', 'sage'),
+            'search_items' => __('Find petition', 'sage'),
+            'not_found' => __('Not found', 'sage'),
+            'not_found_in_trash' => __('Not found in thash', 'sage'),
+            'menu_name' => __('Petitions', 'sage'),
+        ],
+        'public' => true,
+        'show_in_menu' => true,
+        'menu_position' => 6,
+        'menu_icon' => 'dashicons-media-text',
+        'taxonomies' => array('petitions_taxonomy'),
+        'supports' => ['title', 'thumbnail', 'excerpt'],
+        'rewrite' => array('slug' => 'petitions'),
+        'query_var' => true,
+    ]);
+});
+
+/**
+ * Donation taxonomy and post type
+ */
+add_action('init', function () {
+    register_post_type('donations', [
+        'labels' => [
+            'name' => __('Donations', 'sage'),
+            'singular_name' => __('Donation', 'sage'),
+            'add_new' => __('Add donation', 'sage'),
+            'add_new_item' => __('Add new donation', 'sage'),
+            'edit_item' => __('Edit donation', 'sage'),
+            'new_item' => __('New donation', 'sage'),
+            'view_item' => __('Show donation', 'sage'),
+            'search_items' => __('Find donation', 'sage'),
+            'not_found' => __('Not found', 'sage'),
+            'not_found_in_trash' => __('Not found in thash', 'sage'),
+            'menu_name' => __('Donation', 'sage'),
+        ],
+        'public' => true,
+        'show_in_menu' => true,
+        'menu_position' => 6,
+        'menu_icon' => 'dashicons-money-alt',
+        'supports' => ['title', 'thumbnail', 'excerpt'],
+        'rewrite' => array('slug' => 'donation'),
+        'query_var' => true,
+    ]);
+});

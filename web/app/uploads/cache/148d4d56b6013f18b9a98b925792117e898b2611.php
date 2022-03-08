@@ -1,6 +1,6 @@
 <header class="py-3">
-  <div class="d-flex flex-wrap align-items-center justify-content-between justify-content-lg-start">
-    <a href="<?php echo e(home_url('/')); ?>" class="d-flex align-items-center mb-2 mb-lg-0"><img src="<?= App\asset_path('images/logo.png'); ?>" alt="logo"></a>
+  <div class="header__container">
+    <a href="<?php echo e(home_url('/')); ?>" class="col-3 d-flex align-items-center mb-2 mb-lg-0"><img src="<?= App\asset_path('images/logo.svg'); ?>" alt="logo"></a>
 
     <button type="button" class="mob_menu_btn">
       <span class="line"></span>
@@ -13,7 +13,7 @@
 
     <?php endif; ?>
 
-    <div class="text-end">
+    <div class="col-3 text-end justify-content-end">
       <a href="#" class="btn me-2"><?php echo e(pll__('Donation to Ukrainian army')); ?></a>
 
       <div class="lang_switcher">
@@ -24,6 +24,7 @@
           ?> 
         </ul>
       </div>
+      
     </div>
   </div>
 </header>

@@ -55,12 +55,17 @@ body:not(.accessibility) *:focus {
 h2,
 h3,
 h4 {
-  font-family: 'TTNorms', sans-serif;
+  font-family: 'Oswald', sans-serif;
+
+  span {
+    font-family: 'Oswald', sans-serif;
+  }
 }
 
 h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 3.625rem;
+  color: #fff;
 
   span {
     font-family: 'Oswald', sans-serif;
@@ -77,7 +82,7 @@ a {
   font-family: 'TTNorms', sans-serif;
 
   span {
-    color: $warning;
+    font-weight: 700;
   }
 }
 
@@ -92,7 +97,7 @@ a {
 .swiper-pagination-bullet {
   width: 9px;
   height: 9px;
-  background: #C4C4C4;
+  background: #c4c4c4;
   margin: 0 8px !important;
 }
 
@@ -105,6 +110,11 @@ a {
     font-weight: bold;
     font-size: 3rem;
     line-height: 133.02%;
+    text-transform: uppercase;
+
+    span {
+      color: $secondary;
+    }
   }
 
   &__sub {
@@ -115,4 +125,14 @@ a {
 
 .modal-body iframe {
   width: 100%;
+}
+
+.swiper-horizontal > .swiper-scrollbar {
+  height: 1px;
+}
+
+.swiper-scrollbar-drag {
+  height: 2px;
+  width: 100%;
+  background: #1862b2;
 }
