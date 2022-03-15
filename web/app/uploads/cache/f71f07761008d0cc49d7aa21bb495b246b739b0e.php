@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="d-flex flex-wrap flex-lg-nowrap">
 				<div class="half">
-					<h1 class="mt-1 mt-lg-5 pt-2 pt-lg-5"><?php echo $main_fields->title; ?></h1>
+					<h1 class="mt-5 pt-2 pt-lg-5"><?php echo $main_fields->title; ?></h1>
 					<p><?php echo $main_fields->description; ?></p>
 				</div>
 				<div class="half mt-5">
@@ -13,9 +13,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="container container-max mt-5 pt-0 pt-xl-5 px-4">
+		<div class="container container-max mt-xl-5 pt-0 pt-xl-5 px-4">
 			<div class="row px-2">
-				<div class="col-md-6 bg-light pl-0">
+				<div class="col-xl-6 bg-light pl-0">
 					<div class="swiper hotNews">
 						<div class="hotNews__navs d-flex flex-row-reverse">
 							<button type="button" class="hotNews-next"></button>
@@ -24,7 +24,7 @@
 						<div class="swiper-wrapper">
 							<?php $__currentLoopData = $hotnews_fields->hot_news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<div class="swiper-slide">
-									<div class="d-flex">
+									<div class="d-md-flex">
 										<img src="<?php echo e($item['photo']); ?>" class="hotNews__photo" alt="">
 										<div class="hotNews__description py-4 pl-4 pr-5 mr-5 ml-3 mt-2 w-100">
 											<h3><?php echo e($item['title']); ?></h3>
@@ -36,7 +36,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 slug p-5"><?php echo $hotnews_fields->description; ?></div>
+				<div class="col-xl-6 slug p-5"><?php echo $hotnews_fields->description; ?></div>
 			</div>
 		</div>
 	</section>

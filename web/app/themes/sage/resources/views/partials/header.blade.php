@@ -12,7 +12,7 @@
       {!! wp_nav_menu( $nav_arguments->primary ) !!}
     @endif
 
-    <div class="col-3 text-end justify-content-end">
+    <div class="col-3 text-end justify-content-lg-end">
       <a href="#" class="btn me-2">{{ pll__('Donation to Ukrainian army') }}</a>
 
       <div class="lang_switcher">

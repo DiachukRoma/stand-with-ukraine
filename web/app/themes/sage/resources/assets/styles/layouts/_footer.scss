@@ -13,6 +13,10 @@
     top: 0;
     left: calc(50% - 700px);
     background-image: url('../images/footer_1.jpg');
+
+    @include _lg {
+      display: none;
+    }
   }
 
   &::after {
@@ -23,6 +27,14 @@
     bottom: 0;
     right: calc(50% - 700px);
     background-image: url('../images/footer_2.jpg');
+
+    @media (min-width: 992px) and (max-width: 1400px) {
+      right: 0;
+    }
+
+    @include _lg {
+      display: none;
+    }
   }
 
   h3 {

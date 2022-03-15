@@ -7,7 +7,7 @@ header {
   background-color: #fff;
 
   .header__container {
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -23,7 +23,7 @@ header {
     width: 46px;
     height: 38px;
 
-    @include _md {
+    @media (max-width: 1300px) {
       display: block;
     }
 
@@ -88,6 +88,7 @@ header {
       font-weight: bold;
       font-size: 17px;
       color: #000;
+      white-space: nowrap;
     }
 
     .btn {
@@ -95,7 +96,7 @@ header {
     }
   }
 
-  @include _md {
+  @media (max-width: 1300px) {
     #main-menu,
     .text-end {
       display: none;
@@ -113,7 +114,7 @@ header {
 
     &.active {
       .mob_menu_btn .line {
-        background-color: #000;
+        background-color: rgb(255, 255, 255);
       }
 
       ul {
@@ -138,13 +139,23 @@ header {
       .text-end {
         display: block;
         position: fixed;
-        top: 5rem;
+        top: 8rem;
         color: #fff;
+        max-width: calc(100% - 30px);
       }
 
       .text-end {
-        top: 14rem;
+        top: 20rem;
         display: flex;
+
+        a,
+        span {
+          color: #fff;
+        }
+
+        .btn {
+          border-color: #fff;
+        }
       }
     }
   }
