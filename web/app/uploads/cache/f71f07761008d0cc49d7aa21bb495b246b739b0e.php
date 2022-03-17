@@ -71,21 +71,23 @@
 						<div class="swiper-wrapper">
 							<?php $__currentLoopData = $news_fields; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<div class="swiper-slide news__single <?php echo e($item->categories); ?>">
-									<?php if(isset($item->video)): ?>
-										<?php echo $item->video; ?>
+									<a href="<?php echo e($item->twitter_link); ?>" target="_blank" rel="noopener noreferrer">
+										<?php if(isset($item->video)): ?>
+											<?php echo $item->video; ?>
 
-									<?php endif; ?>
+										<?php endif; ?>
 
-									<div class="title p-2"><?php echo e($item->title); ?></div>
+										<div class="title p-2"><?php echo e($item->title); ?></div>
 
-									<?php if(isset($item->excerpt)): ?>
-										<div class="description px-2"><?php echo e($item->excerpt); ?></div>
-									<?php endif; ?>
+										<?php if(isset($item->excerpt)): ?>
+											<div class="description px-2"><?php echo e($item->excerpt); ?></div>
+										<?php endif; ?>
 
-									<div class="data d-flex align-items-center justify-content-between px-2 mt-5">
-										<p class="date m-0"><?php echo e($item->date); ?></p>
-										<a href="<?php echo e($item->twitter_link); ?>" target="_blank" class="d-flex"><img src="<?= App\asset_path('images/twitter.svg'); ?>" alt="twitter"></a>
-									</div>
+										<div class="data d-flex align-items-center justify-content-between px-2 mt-4">
+											<p class="date m-0"><?php echo e($item->date); ?></p>
+											<a href="<?php echo e($item->twitter_link); ?>" target="_blank" class="d-flex" rel="noopener noreferrer"><img src="<?= App\asset_path('images/twitter.svg'); ?>" class="twitter_link" alt="twitter"></a>
+										</div>
+									</a>
 								</div>
 							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 						</div>
@@ -140,7 +142,7 @@
 
 						<div class="swiper-wrapper">
 							<?php $__currentLoopData = $movement_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-								<div class="swiper-slide movement__single">
+								<div class="swiper-slide movement__single redirect_to" data-redirect="<?php echo e($item->twitter_link); ?>">
 									<div class="movement__attachment">
 										<?php echo $item->attach; ?>
 
@@ -202,7 +204,7 @@
 						<div class="swiper-wrapper">
 							<?php $__currentLoopData = $sanctions_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<div class="swiper-slide sanctions__single <?php echo e($item->categories); ?>">
-									<div>
+									<div class="redirect_to" data-redirect="<?php echo e($item->link); ?>">
 										<div class="sanctions__attachment">
 											<?php echo $item->attach; ?>
 
@@ -259,7 +261,7 @@
 						<div class="swiper-wrapper">
 							<?php $__currentLoopData = $petitions_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<div class="swiper-slide sanctions__single <?php echo e($item->categories); ?>">
-									<div>
+									<div class="redirect_to" data-redirect="<?php echo e($item->link); ?>">
 										<div class="sanctions__attachment">
 											<?php echo $item->attach; ?>
 
@@ -310,7 +312,7 @@
 						<div class="swiper-wrapper">
 							<?php $__currentLoopData = $donation_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 								<div class="swiper-slide sanctions__single">
-									<div>
+									<div class="redirect_to" data-redirect="<?php echo e($item->link); ?>">
 										<div class="sanctions__attachment">
 											<?php echo $item->attach; ?>
 

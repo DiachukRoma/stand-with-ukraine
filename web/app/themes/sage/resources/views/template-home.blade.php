@@ -77,20 +77,22 @@
 						<div class="swiper-wrapper">
 							@foreach ($news_fields as $item)
 								<div class="swiper-slide news__single {{ $item->categories }}">
-									@isset($item->video)
-										{!! $item->video !!}
-									@endisset
+									<a href="{{ $item->twitter_link }}" target="_blank" rel="noopener noreferrer">
+										@isset($item->video)
+											{!! $item->video !!}
+										@endisset
 
-									<div class="title p-2">{{ $item->title }}</div>
+										<div class="title p-2">{{ $item->title }}</div>
 
-									@isset($item->excerpt)
-										<div class="description px-2">{{ $item->excerpt }}</div>
-									@endisset
+										@isset($item->excerpt)
+											<div class="description px-2">{{ $item->excerpt }}</div>
+										@endisset
 
-									<div class="data d-flex align-items-center justify-content-between px-2 mt-5">
-										<p class="date m-0">{{ $item->date }}</p>
-										<a href="{{ $item->twitter_link }}" target="_blank" class="d-flex"><img src="@asset('images/twitter.svg')" alt="twitter"></a>
-									</div>
+										<div class="data d-flex align-items-center justify-content-between px-2 mt-4">
+											<p class="date m-0">{{ $item->date }}</p>
+											<a href="{{ $item->twitter_link }}" target="_blank" class="d-flex" rel="noopener noreferrer"><img src="@asset('images/twitter.svg')" class="twitter_link" alt="twitter"></a>
+										</div>
+									</a>
 								</div>
 							@endforeach
 						</div>
@@ -145,7 +147,7 @@
 
 						<div class="swiper-wrapper">
 							@foreach ($movement_posts as $item)
-								<div class="swiper-slide movement__single">
+								<div class="swiper-slide movement__single redirect_to" data-redirect="{{ $item->twitter_link }}">
 									<div class="movement__attachment">
 										{!! $item->attach !!}
 									</div>
@@ -206,7 +208,7 @@
 						<div class="swiper-wrapper">
 							@foreach ($sanctions_posts as $item)
 								<div class="swiper-slide sanctions__single {{ $item->categories }}">
-									<div>
+									<div class="redirect_to" data-redirect="{{ $item->link }}">
 										<div class="sanctions__attachment">
 											{!! $item->attach !!}
 										</div>
@@ -262,7 +264,7 @@
 						<div class="swiper-wrapper">
 							@foreach ($petitions_posts as $item)
 								<div class="swiper-slide sanctions__single {{ $item->categories }}">
-									<div>
+									<div class="redirect_to" data-redirect="{{ $item->link }}">
 										<div class="sanctions__attachment">
 											{!! $item->attach !!}
 										</div>
@@ -312,7 +314,7 @@
 						<div class="swiper-wrapper">
 							@foreach ($donation_posts as $item)
 								<div class="swiper-slide sanctions__single">
-									<div>
+									<div class="redirect_to" data-redirect="{{ $item->link }}">
 										<div class="sanctions__attachment">
 											{!! $item->attach !!}
 										</div>

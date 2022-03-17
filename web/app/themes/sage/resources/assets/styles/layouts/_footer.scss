@@ -50,24 +50,23 @@
 
   &__btns {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 2rem 0;
 
     a {
       width: calc(50% - 0.5rem);
+      font-weight: 700;
       border: 1px solid #fff;
       padding: 0.5rem 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: all 0.3s ease;
 
-      &.like {
-        color: #000;
-        background-color: $warning;
-      }
-
-      img {
-        margin-right: 5px;
+      &:hover {
+        color: #333;
+        background-color: #fcdf51;
+        border-color: #fcdf51;
       }
     }
   }

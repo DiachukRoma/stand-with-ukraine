@@ -67,7 +67,7 @@ class TemplateHome extends Controller
 
       return (object) [
         'categories' => implode(' ', $array),
-        'video' => $post->post_content,
+        'video' => $post->post_content !== '' ? $post->post_content : get_the_post_thumbnail($post, array(400, 400)),
         'title' => $post->post_title,
         'excerpt' => $post->post_excerpt,
         'date' => date('F j, Y', strtotime($post->post_date)),

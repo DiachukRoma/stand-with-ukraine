@@ -23,6 +23,13 @@ export default {
       $('html, body').animate({ scrollTop: target }, 500);
       $('header').removeClass('active');
     });
+
+    /**
+     * Redirect to
+     */
+    $('.redirect_to').on('click', function(){
+      window.open($(this).attr('data-redirect'), '_blank');
+    })
   },
   finalize() {
   },

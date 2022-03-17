@@ -5,7 +5,6 @@
 				<h3 class="title"><?php echo pll__('Ukraine is now fighting for its survival. Let\'s defend <span>Ukraine</span> together!'); ?></h3>
 
 				<div class="footer__btns">
-					<a href="#" class="like"><img src="<?= App\asset_path('images/like.svg'); ?>" alt=""> <?php echo e(pll__('Defend Ukraine')); ?></a>
 					<a href="#"><?php echo e(pll__('Have a questions?')); ?></a>
 				</div>
 

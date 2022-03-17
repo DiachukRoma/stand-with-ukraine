@@ -14,7 +14,7 @@
     <?php endif; ?>
 
     <div class="col-3 text-end justify-content-lg-end">
-      <a href="#" class="btn me-2"><?php echo e(pll__('Donation to Ukrainian army')); ?></a>
+      <a href="https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi" class="btn me-2" target="_blank"><?php echo e(pll__('Donation to Ukrainian army')); ?></a>
 
       <div class="lang_switcher">
         <span>EN</span>

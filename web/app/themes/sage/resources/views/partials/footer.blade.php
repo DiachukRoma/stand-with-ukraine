@@ -5,7 +5,6 @@
 				<h3 class="title">{!! pll__('Ukraine is now fighting for its survival. Let\'s defend <span>Ukraine</span> together!') !!}</h3>
 
 				<div class="footer__btns">
-					<a href="#" class="like"><img src="@asset('images/like.svg')" alt=""> {{ pll__('Defend Ukraine') }}</a>
 					<a href="#">{{ pll__('Have a questions?') }}</a>
 				</div>
 
