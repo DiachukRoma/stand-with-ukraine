@@ -112,64 +112,8 @@
 					<div class="canHelp__btns">
 						<a href="<?php echo e($can_halp->link_1['url']); ?>" class="btn"><?php echo e($can_halp->link_1['title']); ?></a>
 						<a href="<?php echo e($can_halp->link_2['url']); ?>" class="btn"><?php echo e($can_halp->link_2['title']); ?></a>
-						<a href="<?php echo e($can_halp->link_3['url']); ?>" class="btn"><?php echo e($can_halp->link_3['title']); ?></a>
+						<a href="<?php echo e($can_halp->link_3['url']); ?>" class="btn d-none"><?php echo e($can_halp->link_3['title']); ?></a>
 						<a href="<?php echo e($can_halp->link_4['url']); ?>" class="btn"><?php echo e($can_halp->link_4['title']); ?></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="protests" class="movement">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center section_title">
-					<h2 class="movement__title"><?php echo $movement_fields_title->title; ?></h2>
-					<p class="movement__description"><?php echo $movement_fields_title->description; ?></p>
-					<p class="movement__subtitle"><?php echo $movement_fields_title->subtitle; ?></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-12">
-					<div class="swiper movement__slider">
-						<div class="movement__navs d-flex flex-row-reverse">
-							<button type="button" class="movement-next">
-								<img src="<?= App\asset_path('images/arrow-right.svg'); ?>" alt="next">
-							</button>
-							<button type="button" class="movement-prev">
-								<img src="<?= App\asset_path('images/arrow-left.svg'); ?>" alt="left">
-							</button>
-						</div>
-
-						<div class="swiper-wrapper">
-							<?php $__currentLoopData = $movement_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-								<div class="swiper-slide movement__single redirect_to" data-redirect="<?php echo e($item->twitter_link); ?>">
-									<div class="movement__attachment">
-										<?php echo $item->attach; ?>
-
-									</div>
-									<div class="movement__localeMembers d-flex justify-content-between align-items-center px-3 py-2">
-										<p class="d-flex align-items-center"><img src="<?= App\asset_path('images/placeholder.svg'); ?>" class="mr-2" alt=""> <?php echo e($item->location); ?></p>
-										<p><?php echo e($item->members); ?></p>
-									</div>
-									<p class="single_description px-3"><?php echo e($item->title); ?></p>
-
-									<?php if(isset($item->tags)): ?>
-										<p class="movement__tags px-3">
-											<?php $__currentLoopData = $item->tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-												<span> #<?php echo e($tag->name); ?></span>
-											<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-										</p>
-									<?php endif; ?>
-
-									<div class="movement__dateLink d-flex align-items-center justify-content-between px-3 mt-4 mb-3">
-										<p class="date m-0"><?php echo e($item->date); ?></p>
-										<a href="<?php echo e($item->twitter_link); ?>" target="_blank" class="d-flex"><img src="<?= App\asset_path('images/twitter.svg'); ?>" alt="twitter"></a>
-									</div>
-								</div>
-							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-						</div>
-						<div class="swiper-scrollbar"></div>
 					</div>
 				</div>
 			</div>
@@ -233,7 +177,63 @@
 		</div>
 	</section>
 
-	<section id="petitions" class="sanctions petitions">
+	<section id="protests" class="movement">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center section_title">
+					<h2 class="movement__title"><?php echo $movement_fields_title->title; ?></h2>
+					<p class="movement__description"><?php echo $movement_fields_title->description; ?></p>
+					<p class="movement__subtitle"><?php echo $movement_fields_title->subtitle; ?></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="swiper movement__slider">
+						<div class="movement__navs d-flex flex-row-reverse">
+							<button type="button" class="movement-next">
+								<img src="<?= App\asset_path('images/arrow-right.svg'); ?>" alt="next">
+							</button>
+							<button type="button" class="movement-prev">
+								<img src="<?= App\asset_path('images/arrow-left.svg'); ?>" alt="left">
+							</button>
+						</div>
+
+						<div class="swiper-wrapper">
+							<?php $__currentLoopData = $movement_posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								<div class="swiper-slide movement__single redirect_to" data-redirect="<?php echo e($item->twitter_link); ?>">
+									<div class="movement__attachment">
+										<?php echo $item->attach; ?>
+
+									</div>
+									<div class="movement__localeMembers d-flex justify-content-between align-items-center px-3 py-2">
+										<p class="d-flex align-items-center"><img src="<?= App\asset_path('images/placeholder.svg'); ?>" class="mr-2" alt=""> <?php echo e($item->location); ?></p>
+										<p><?php echo e($item->members); ?></p>
+									</div>
+									<p class="single_description px-3"><?php echo e($item->title); ?></p>
+
+									<?php if(isset($item->tags)): ?>
+										<p class="movement__tags px-3">
+											<?php $__currentLoopData = $item->tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+												<span> #<?php echo e($tag->name); ?></span>
+											<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+										</p>
+									<?php endif; ?>
+
+									<div class="movement__dateLink d-flex align-items-center justify-content-between px-3 mt-4 mb-3">
+										<p class="date m-0"><?php echo e($item->date); ?></p>
+										<a href="<?php echo e($item->twitter_link); ?>" target="_blank" class="d-flex"><img src="<?= App\asset_path('images/twitter.svg'); ?>" alt="twitter"></a>
+									</div>
+								</div>
+							<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+						</div>
+						<div class="swiper-scrollbar"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="petitions" class="sanctions petitions d-none">
 		<div class="container">
 			<div class="row mb-3 mb-lg-5">
 				<div class="col-lg-8 offset-lg-2 text-center section_title">

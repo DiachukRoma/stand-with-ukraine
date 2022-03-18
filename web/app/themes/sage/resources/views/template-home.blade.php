@@ -116,63 +116,8 @@
 					<div class="canHelp__btns">
 						<a href="{{ $can_halp->link_1['url'] }}" class="btn">{{ $can_halp->link_1['title'] }}</a>
 						<a href="{{ $can_halp->link_2['url'] }}" class="btn">{{ $can_halp->link_2['title'] }}</a>
-						<a href="{{ $can_halp->link_3['url'] }}" class="btn">{{ $can_halp->link_3['title'] }}</a>
+						<a href="{{ $can_halp->link_3['url'] }}" class="btn d-none">{{ $can_halp->link_3['title'] }}</a>
 						<a href="{{ $can_halp->link_4['url'] }}" class="btn">{{ $can_halp->link_4['title'] }}</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="protests" class="movement">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center section_title">
-					<h2 class="movement__title">{!! $movement_fields_title->title !!}</h2>
-					<p class="movement__description">{!! $movement_fields_title->description !!}</p>
-					<p class="movement__subtitle">{!! $movement_fields_title->subtitle !!}</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-12">
-					<div class="swiper movement__slider">
-						<div class="movement__navs d-flex flex-row-reverse">
-							<button type="button" class="movement-next">
-								<img src="@asset('images/arrow-right.svg')" alt="next">
-							</button>
-							<button type="button" class="movement-prev">
-								<img src="@asset('images/arrow-left.svg')" alt="left">
-							</button>
-						</div>
-
-						<div class="swiper-wrapper">
-							@foreach ($movement_posts as $item)
-								<div class="swiper-slide movement__single redirect_to" data-redirect="{{ $item->twitter_link }}">
-									<div class="movement__attachment">
-										{!! $item->attach !!}
-									</div>
-									<div class="movement__localeMembers d-flex justify-content-between align-items-center px-3 py-2">
-										<p class="d-flex align-items-center"><img src="@asset('images/placeholder.svg')" class="mr-2" alt=""> {{ $item->location }}</p>
-										<p>{{ $item->members }}</p>
-									</div>
-									<p class="single_description px-3">{{ $item->title }}</p>
-
-									@isset($item->tags)
-										<p class="movement__tags px-3">
-											@foreach ($item->tags as $tag)
-												<span> #{{ $tag->name }}</span>
-											@endforeach
-										</p>
-									@endisset
-
-									<div class="movement__dateLink d-flex align-items-center justify-content-between px-3 mt-4 mb-3">
-										<p class="date m-0">{{ $item->date }}</p>
-										<a href="{{ $item->twitter_link }}" target="_blank" class="d-flex"><img src="@asset('images/twitter.svg')" alt="twitter"></a>
-									</div>
-								</div>
-							@endforeach
-						</div>
-						<div class="swiper-scrollbar"></div>
 					</div>
 				</div>
 			</div>
@@ -235,7 +180,62 @@
 		</div>
 	</section>
 
-	<section id="petitions" class="sanctions petitions">
+	<section id="protests" class="movement">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center section_title">
+					<h2 class="movement__title">{!! $movement_fields_title->title !!}</h2>
+					<p class="movement__description">{!! $movement_fields_title->description !!}</p>
+					<p class="movement__subtitle">{!! $movement_fields_title->subtitle !!}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="swiper movement__slider">
+						<div class="movement__navs d-flex flex-row-reverse">
+							<button type="button" class="movement-next">
+								<img src="@asset('images/arrow-right.svg')" alt="next">
+							</button>
+							<button type="button" class="movement-prev">
+								<img src="@asset('images/arrow-left.svg')" alt="left">
+							</button>
+						</div>
+
+						<div class="swiper-wrapper">
+							@foreach ($movement_posts as $item)
+								<div class="swiper-slide movement__single redirect_to" data-redirect="{{ $item->twitter_link }}">
+									<div class="movement__attachment">
+										{!! $item->attach !!}
+									</div>
+									<div class="movement__localeMembers d-flex justify-content-between align-items-center px-3 py-2">
+										<p class="d-flex align-items-center"><img src="@asset('images/placeholder.svg')" class="mr-2" alt=""> {{ $item->location }}</p>
+										<p>{{ $item->members }}</p>
+									</div>
+									<p class="single_description px-3">{{ $item->title }}</p>
+
+									@isset($item->tags)
+										<p class="movement__tags px-3">
+											@foreach ($item->tags as $tag)
+												<span> #{{ $tag->name }}</span>
+											@endforeach
+										</p>
+									@endisset
+
+									<div class="movement__dateLink d-flex align-items-center justify-content-between px-3 mt-4 mb-3">
+										<p class="date m-0">{{ $item->date }}</p>
+										<a href="{{ $item->twitter_link }}" target="_blank" class="d-flex"><img src="@asset('images/twitter.svg')" alt="twitter"></a>
+									</div>
+								</div>
+							@endforeach
+						</div>
+						<div class="swiper-scrollbar"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="petitions" class="sanctions petitions d-none">
 		<div class="container">
 			<div class="row mb-3 mb-lg-5">
 				<div class="col-lg-8 offset-lg-2 text-center section_title">
