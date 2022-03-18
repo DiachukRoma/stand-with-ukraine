@@ -19,7 +19,14 @@ export default {
     const newsSlider = new Swiper('.news__slider', {
       modules: [Navigation, Pagination, Scrollbar],
       spaceBetween: 38,
-      slidesPerView: 'auto',
+      slidesPerView: 1,
+      autoHeight: true,
+      breakpoints: {
+        768: {
+          slidesPerView: 'auto',
+          autoHeight: false,
+        },
+      },
 
       navigation: {
         nextEl: '.news-next',
@@ -56,7 +63,14 @@ export default {
     new Swiper('.movement__slider', {
       modules: [Navigation, Scrollbar],
       spaceBetween: 48,
-      slidesPerView: 'auto',
+      slidesPerView: 1,
+      autoHeight: true,
+      breakpoints: {
+        768: {
+          slidesPerView: 'auto',
+          autoHeight: false,
+        },
+      },
 
       navigation: {
         nextEl: '.movement-next',
@@ -76,7 +90,14 @@ export default {
     const sanctionsSlider = new Swiper('.sanctions__slider', {
       modules: [Navigation, Scrollbar],
       spaceBetween: 48,
-      slidesPerView: 'auto',
+      slidesPerView: 1,
+      autoHeight: true,
+      breakpoints: {
+        768: {
+          slidesPerView: 'auto',
+          autoHeight: false,
+        },
+      },
 
       navigation: {
         nextEl: '.sanctions-next',
@@ -113,7 +134,14 @@ export default {
     const petitionsSlider = new Swiper('.petitions__slider', {
       modules: [Navigation, Scrollbar],
       spaceBetween: 48,
-      slidesPerView: 'auto',
+      slidesPerView: 1,
+      autoHeight: true,
+      breakpoints: {
+        768: {
+          slidesPerView: 'auto',
+          autoHeight: false,
+        },
+      },
 
       navigation: {
         nextEl: '.petitions-next',
@@ -150,7 +178,14 @@ export default {
     new Swiper('.donation__slider', {
       modules: [Navigation, Scrollbar],
       spaceBetween: 48,
-      slidesPerView: 'auto',
+      slidesPerView: 1,
+      autoHeight: true,
+      breakpoints: {
+        768: {
+          slidesPerView: 'auto',
+          autoHeight: false,
+        },
+      },
 
       navigation: {
         nextEl: '.donation-next',

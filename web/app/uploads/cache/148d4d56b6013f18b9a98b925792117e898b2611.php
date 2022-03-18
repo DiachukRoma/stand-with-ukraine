@@ -1,6 +1,6 @@
 <header class="py-3">
   <div class="header__container">
-    <a href="<?php echo e(home_url('/')); ?>" class="col-3 d-flex align-items-center mb-2 mb-lg-0"><img src="<?= App\asset_path('images/logo.svg'); ?>" alt="logo"></a>
+    <a href="<?php echo e(home_url('/')); ?>" class="col-3 d-flex align-items-center"><img src="<?= App\asset_path('images/logo.svg'); ?>" alt="logo"></a>
 
     <button type="button" class="mob_menu_btn">
       <span class="line"></span>

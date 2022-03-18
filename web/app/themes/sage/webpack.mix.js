@@ -22,7 +22,7 @@ mix.extend('prettyNotifications', new Notifications);
 
 mix
   .setPublicPath('./dist')
-  .browserSync('https://sw-ukraine.loc');
+  .browserSync('http://sw-ukraine.loc');
 
 mix
   .sass('resources/assets/styles/main.scss', 'styles')

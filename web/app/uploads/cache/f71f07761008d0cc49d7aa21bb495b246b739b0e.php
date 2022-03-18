@@ -4,7 +4,8 @@
 			<div class="d-flex flex-wrap flex-lg-nowrap">
 				<div class="half">
 					<h1 class="mt-5 pt-2 pt-lg-5"><?php echo $main_fields->title; ?></h1>
-					<p><?php echo $main_fields->description; ?></p>
+					<?php echo $main_fields->description; ?>
+
 				</div>
 				<div class="half mt-5">
 					<video controls>
@@ -14,7 +15,7 @@
 			</div>
 		</div>
 		<div class="container container-max mt-xl-5 pt-0 pt-xl-5 px-4">
-			<div class="row px-2">
+			<div class="row px-2 colReverce">
 				<div class="col-xl-6 bg-light pl-0">
 					<div class="swiper hotNews">
 						<div class="hotNews__navs d-flex flex-row-reverse">
@@ -36,13 +37,13 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-6 slug p-5"><?php echo $hotnews_fields->description; ?></div>
+				<div class="col-xl-6 slug py-3 p-lg-5"><?php echo $hotnews_fields->description; ?></div>
 			</div>
 		</div>
 	</section>
 
 	<section class="news">
-		<div class="container mt-5 py-5">
+		<div class="container mt-0 mt-lg-5 py-5">
 			<div class="row section_title py-0 my-0 py-md-2 my-md-2 ">
 				<div class="col-md-12 text-center">
 					<h2><?php echo $standing_fields->title; ?></h2>
@@ -177,7 +178,7 @@
 
 	<section id="sanctions" class="sanctions">
 		<div class="container">
-			<div class="row mb-5">
+			<div class="row mb-3 mb-lg-5">
 				<div class="col-lg-8 offset-lg-2 text-center section_title">
 					<h2 class="sanctions__title"><?php echo $sanctions_fields->title; ?></h2>
 					<p class="sanctions__description"><?php echo $sanctions_fields->description; ?></p>
@@ -234,7 +235,7 @@
 
 	<section id="petitions" class="sanctions petitions">
 		<div class="container">
-			<div class="row mb-5">
+			<div class="row mb-3 mb-lg-5">
 				<div class="col-lg-8 offset-lg-2 text-center section_title">
 					<h2 class="sanctions__title"><?php echo $petitions_fields->title; ?></h2>
 					<p class="sanctions__description"><?php echo $petitions_fields->description; ?></p>
@@ -293,7 +294,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 offset-lg-3 text-center section_title">
-					<h2 class="sanctions__title mb-5"><?php echo $donation_fields->title; ?></h2>
+					<h2 class="sanctions__title mb-3 mb-lg-5"><?php echo $donation_fields->title; ?></h2>
 					<p class="sanctions__description"><?php echo $donation_fields->description; ?></p>
 				</div>
 			</div>

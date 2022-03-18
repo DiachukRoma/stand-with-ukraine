@@ -5,6 +5,11 @@
   padding: 8rem 0;
   position: relative;
 
+  @include _lg {
+    padding: 9rem 0 0;
+    margin-top: 6rem;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -15,7 +20,10 @@
     background-image: url('../images/footer_1.jpg');
 
     @include _lg {
-      display: none;
+      left: calc(50% - 180px);
+      top: -6rem;
+      max-width: 360px;
+      width: 100%;
     }
   }
 
@@ -71,11 +79,17 @@
     }
   }
 
-  ul li a {
-    padding: 0.5rem 1rem;
+  ul {
+    @include _lg {
+      display: none;
+    }
 
-    &:hover {
-      color: $warning;
+    li a {
+      padding: 0.5rem 1rem;
+
+      &:hover {
+        color: $warning;
+      }
     }
   }
 }
