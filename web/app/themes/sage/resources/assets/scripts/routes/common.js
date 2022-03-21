@@ -27,9 +27,24 @@ export default {
     /**
      * Redirect to
      */
-    $('.redirect_to').on('click', function(){
+    $('.redirect_to').on('click', function () {
       window.open($(this).attr('data-redirect'), '_blank');
-    })
+    });
+
+    /**
+     * Scroll to top
+     */
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 100) {
+        $('#toTop').fadeIn();
+      } else {
+        $('#toTop').fadeOut();
+      }
+    });
+
+    $('#toTop').click(function () {
+      $('html, body').animate({ scrollTop: 0 }, 1000);
+    });
   },
   finalize() {
   },

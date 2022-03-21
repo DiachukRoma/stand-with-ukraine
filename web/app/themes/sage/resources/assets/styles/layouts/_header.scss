@@ -15,6 +15,17 @@ header {
     margin: auto;
   }
 
+  @media (min-width: 1299px) and (max-width: 1400px) {
+    .header__logo {
+      flex: 0 0 15%;
+    }
+
+    .nav {
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+  }
+
   .mob_menu_btn {
     display: none;
     position: relative;

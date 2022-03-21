@@ -15,3 +15,5 @@
 		</div>
 	</div>
 </footer>
+
+<span id="toTop"><img src="@asset('images/toTop.jpg')" alt="to top"></span>

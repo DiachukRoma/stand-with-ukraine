@@ -63,13 +63,19 @@
 
     a {
       width: calc(50% - 0.5rem);
-      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
       border: 1px solid #fff;
       padding: 0.5rem 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all 0.3s ease;
+
+      @include _md {
+        font-size: 13px;
+        width: inherit;
+      }
 
       &:hover {
         color: #333;

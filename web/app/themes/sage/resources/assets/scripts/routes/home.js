@@ -20,11 +20,9 @@ export default {
       modules: [Navigation, Pagination, Scrollbar],
       spaceBetween: 38,
       slidesPerView: 1,
-      autoHeight: true,
       breakpoints: {
         768: {
           slidesPerView: 'auto',
-          autoHeight: false,
         },
       },
 
@@ -91,11 +89,9 @@ export default {
       modules: [Navigation, Scrollbar],
       spaceBetween: 48,
       slidesPerView: 1,
-      autoHeight: true,
       breakpoints: {
         768: {
           slidesPerView: 'auto',
-          autoHeight: false,
         },
       },
 
@@ -135,11 +131,9 @@ export default {
       modules: [Navigation, Scrollbar],
       spaceBetween: 48,
       slidesPerView: 1,
-      autoHeight: true,
       breakpoints: {
         768: {
           slidesPerView: 'auto',
-          autoHeight: false,
         },
       },
 

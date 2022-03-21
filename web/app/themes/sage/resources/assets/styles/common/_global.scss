@@ -150,3 +150,22 @@ a {
 .redirect_to {
   cursor: pointer;
 }
+
+#toTop {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  box-shadow: 0 0 4px 1px rgb(166 166 166 / 70%);
+  border-radius: 4px;
+
+  img {
+    display: block;
+  }
+}

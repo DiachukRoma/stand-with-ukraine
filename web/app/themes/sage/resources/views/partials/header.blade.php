@@ -1,6 +1,6 @@
 <header class="py-3">
   <div class="header__container">
-    <a href="{{ home_url('/') }}" class="col-3 d-flex align-items-center"><img src="@asset('images/logo.svg')" alt="logo"></a>
+    <a href="{{ home_url('/') }}" class="col-3 d-flex align-items-center header__logo"><img src="@asset('images/logo.svg')" alt="logo"></a>
 
     <button type="button" class="mob_menu_btn">
       <span class="line"></span>
