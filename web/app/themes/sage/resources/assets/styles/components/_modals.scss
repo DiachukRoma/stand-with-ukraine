@@ -1,0 +1,54 @@
+#haveQuestion {
+  .modal-header {
+    padding: 10px 22px 0;
+    border-bottom: none;
+
+    span {
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  .modal-content {
+    border: none;
+    border-top: 5px solid #fcdf51;
+  }
+
+  .modal-body {
+    padding: 0 55px 40px;
+
+    .section_title {
+      font-size: 36px;
+      margin-bottom: 1.5rem;
+    }
+
+    input {
+      background-color: #f8f7f1;
+      border: none;
+      font-family: 'TTNorms', sans-serif;
+
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 300;
+      }
+    }
+
+    textarea {
+      font-family: 'TTNorms', sans-serif;
+      background-color: #f8f7f1;
+      border: none;
+    }
+
+    .btn {
+      background-color: #fcdf51;
+      padding: 14px 60px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 13px;
+      border: none;
+      margin-top: 6px;
+    }
+  }
+}

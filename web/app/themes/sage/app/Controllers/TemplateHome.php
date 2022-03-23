@@ -11,6 +11,29 @@ use Sober\Controller\Controller;
 class TemplateHome extends Controller
 {
   /**
+   *  Constructors
+   */
+  public function __construct()
+  {
+      add_action('wp_ajax_question', [$this, 'question']);
+      add_action('wp_ajax_nopriv_question', [$this, 'question']);
+  }
+
+  /**
+   * Question ajax function
+   */
+  public static function question()
+  {
+    $data = [];
+    foreach ($_POST['data'] as $item) {
+      $data[$item['name']] = $item['value'];
+    }
+
+    $message = 'Subject: ' . $data['subject'] . '; Email: ' . $data['email'] . '; Details: ' . $data['details'];
+    wp_mail( 'stopthewar2k@gmail.com', $data['subject'],  $message);
+  }
+
+  /**
    * Get main fields
    */
   public function mainFields(){

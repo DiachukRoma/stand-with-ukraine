@@ -205,6 +205,35 @@ export default {
      */
     $('.modal').on('hidden.bs.modal', function () {
       $('.modal video').trigger('pause');
+      $('.formStatus').html('');
+      $('form')[0].reset();
+    });
+
+    /**
+     * Ajax - have a question
+     */
+
+    $('form').on('submit', function(e){
+      e.preventDefault();
+      let formData = $(this).serializeArray();
+
+      $.ajax({
+        url: window.appMeta.ajaxUrl,
+        type: 'POST',
+        data: {
+          action: 'question',
+          data: formData,
+        },
+        error: () => {
+          $('.formStatus').html('Sorry, your message has not been sent. Please try again later');
+        },
+        success: () => {
+          $('.formStatus').html('Thanks. Your message has been sent');
+          setTimeout(() => { 
+            $('.modal').modal('hide'); 
+          }, 3000);
+        },
+      })      
     })
 
   },
