@@ -169,7 +169,7 @@ export default {
     /**
      * Donation slider
      */
-    new Swiper('.donation__slider', {
+    const donationSliderSettings = {
       modules: [Navigation, Scrollbar],
       spaceBetween: 48,
       slidesPerView: 1,
@@ -191,7 +191,14 @@ export default {
         draggable: true,
         dragSize: 64,
       },
-    });
+    };
+
+    let donationSlider = new Swiper('.donation__slider', donationSliderSettings);
+
+    $(window).on('resize', () => {
+      donationSlider.destroy();
+      donationSlider = new Swiper('.donation__slider', donationSliderSettings);
+    })
 
     /**
      * Toogle mob menu
