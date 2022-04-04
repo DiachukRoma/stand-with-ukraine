@@ -5,6 +5,10 @@
   padding: 8rem 0;
   position: relative;
 
+  @media screen and (max-width: 1100px) {
+    padding: 8rem 0 3rem;
+  }
+
   @include _lg {
     padding: 9rem 0 0;
     margin-top: 6rem;
@@ -88,12 +92,25 @@
   }
 
   ul {
+    flex-wrap: nowrap;
+
+    @media screen and (max-width: 1100px) {
+      flex-direction: column;
+    }
+
     @include _lg {
       display: none;
     }
 
     li a {
       padding: 1.2rem 0.5rem;
+      white-space: nowrap;
+
+      @media screen and (max-width: 1100px) {
+        padding: 0.2rem 0.5rem;
+        display: block;
+        white-space: nowrap;
+      }
 
       &:hover {
         color: $warning;

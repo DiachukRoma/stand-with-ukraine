@@ -15,7 +15,7 @@ header {
     margin: auto;
   }
 
-  @media (min-width: 1299px) and (max-width: 1400px) {
+  @media (min-width: 1299px) and (max-width: 1480px) {
     .header__logo {
       flex: 0 0 15%;
     }
@@ -87,6 +87,10 @@ header {
 
         &:hover {
           opacity: 0.8;
+        }
+
+        @media (min-width: 1299px) and (max-width: 1600px) {
+          padding: 1em .8em;
         }
       }
     }
