@@ -30,13 +30,13 @@
 						<div class="swiper-wrapper">
 							@foreach ($hotnews_fields->hot_news as $item)
 								<div class="swiper-slide">
-									<div class="d-md-flex">
+									<a class="d-md-flex" href="{{ $item['link'] }}" target="_blank">
 										<img src="{{ $item['photo'] }}" class="hotNews__photo" alt="">
 										<div class="hotNews__description py-4 pl-4 pr-5 mr-5 ml-3 mt-2 w-100">
 											<h3>{{ $item['title'] }}</h3>
 											<p>{{ $item['description'] }}</p>
 										</div>
-									</div>
+									</a>
 								</div>
 							@endforeach
 						</div>
